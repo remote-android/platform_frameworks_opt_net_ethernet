@@ -342,6 +342,7 @@ class EthernetNetworkFactory {
                 return;
             }
             linkProperties = config.getStaticIpConfiguration().toLinkProperties(mIface);
+            onIpLayerStarted(linkProperties);
         } else {
             mNetworkInfo.setDetailedState(DetailedState.OBTAINING_IPADDR, null, mHwAddr);
             IpManager.Callback ipmCallback = new IpManager.Callback() {
